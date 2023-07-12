@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Kandang</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Sharp" rel="stylesheet"/>
+<!--MyStyle-->
+    <link rel="stylesheet" href="TestingDashboard.css">
+<!--Grafik Data yang dikirim oleh sensor-->
+<script src="https://cdn.plot.ly/plotly-2.16.1.min.js"></script>
+<script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+</head>
+<body>
+    <div class="class">
+        <aside>
+            <div class="top">
+                <img src="" alt=""/>
+                <h2>Kandang Ayam</h2>
+            </div>
+            <div class="close" id="close-btn">
+                <span class="material-symbols-sharp">close</span>
+            </div>
+            <div class="sidebar">
+                <a href="#" class="active">
+                    <span class="material-symbols-sharp"> dashboard </span>
+                    <h3> dashboard </h3>
+                </a>
+            </div>
+        </aside>
+        <main>
+            <h1>Kandang Ayam</h1>
+            <div class="connection-status">
+                <h3>Connection Status: <span class="status"> Disconnected </span></h3>
+            </div>
+            <div class="insights">
+                <div class="temperature">
+                    <div class="middle">
+                        <div class="left">
+                            <h3>Temperature</h3>
+                            <h1 id="temperature"></h1>
+                        </div>
+                        <div class="icon">
+                            <span class="material-symbols-sharp"> device_thermostat </span>
+                        </div>
+                    </div>
+                </div>
+<!--END OF TEMPERATURE-->
+                <div class="humidity">
+                <div class="middle">
+                    <div class="left">
+                        <h3>Humidity</h3>
+                        <h1 id="humidity"></h1>
+                    </div>
+                    <div class="icon">
+                        <span class="material-symbols-sharp">
+                            humidity_percentage
+                        </span>
+                    </div>
+                </div>
+                </div>
+<!--End OF HUMIDITY-->
+                <div class="pressure">
+                    <div class="middle">
+                        <div class="left">
+                        <h3> Ammoniak </h3>
+                        <h1 id="pressure"></h1>
+                    </div>
+                    <div class="icon">
+                        <span class="material-symbols-sharp"> speed </span>
+                    </div>
+                    </div>
+                </div>
+            </div>
+<!--End Of Insights-->
+            <div class="histories">
+                <h2> Historical Charts</h2>
+                <div class="history-charts">
+                    <div id="temperature-history" class="history-divs"></div>
+                    <div id="humidity-history" class="history-divs"></div>
+                </div>
+            </div>
+        </main>
+        <div class="right">
+            <div class="top">
+                <button id="menu-btn">
+                    <span class="material-symbols-sharp"> menu </span>
+                </button>
+                <div class="theme-toogler">
+                    <span class="material-symbols-sharp active"> light_mode </span>
+                    <span class="material-symbols-sharp"> dark_mode </span>
+                </div>
+            </div>
+        </div>
+<!--End Of top-->
+        <div class="gauge-charts">
+            <h2> Gauge Charts</h2>
+            <div class="item">
+                <div id="temperature-gauge"></div>
+            </div>
+            <div class="item">
+                <div id="humidity-gauge"></div>
+            </div>
+            <div class="item">
+                <div id="pressure-gauge"></div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="./scriptDashboard.js"></script>
+    <script type="module" src="./mqttService.js"></script>
+</body>
+</html>

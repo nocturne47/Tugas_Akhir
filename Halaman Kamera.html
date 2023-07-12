@@ -1,0 +1,37 @@
+<!DOCTYPE html><!-- Simple stream and control page for esp32-cam Renzo Mischianti <www.mischianti.org> -->
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Simple stream page</title>
+    </head>
+    <style>
+        .main-container {
+            display: flex;
+            flex-wrap: wrap
+        }
+        .main-container .video-block {
+            padding: 40px;
+            width: 100%;
+            max-width: 768px;
+            min-width: 300px
+        }
+        .main-container .cmd-block {
+            padding: 40px;
+            min-width: 300px
+        }
+    </style>
+    <body>
+     
+    <div class="main-container">
+        <div class="video-block">
+            <img alt="Video stream"
+                 src='http://192.168.43.221/status' style="object-fit: contain; height: 100%; width: 100%; background-color: #353535"/>
+        </div>
+        <div class="cmd-block">
+            <a href="mischianti.org">www.mischianti.org</a>
+            <br>
+            Commands
+        </div>
+    </div>
+    </body>
+    </html>
